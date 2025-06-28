@@ -1,3 +1,12 @@
+// Add Trusted Types policy at the very top
+if (window.trustedTypes && window.trustedTypes.createPolicy) {
+  window.trustedTypes.createPolicy('default', {
+    createHTML: string => string,
+    createScriptURL: string => string,
+    createScript: string => string,
+  });
+}
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
